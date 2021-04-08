@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-buttons>
+              <ion-back-button [text]="getBackButtonText()" defaultHref="/"></ion-back-button>
+            </ion-buttons>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <p>Cont bancar</p>
+            <p>{{message.account}}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="message">
+  <ion-item>
+    <h2>Actualizat la 17 Dec, 16:11</h2>
+    <h2>Sold cont</h2>
+    <div>
+      <h2>MDL{{message.sum}}</h2>
+
+    </div>
+  </ion-item>
+  <div class="ion-padding">
+    <h2>Tranzactii</h2>
+    <ion-item>
+      <ion-tabs>
+        <ion-tab-bar>
+          <ion-tab-button>
+            <ion-label>Toate</ion-label>
+          </ion-tab-button>
+          <ion-tab-button>
+            <ion-label>Intrari</ion-label>
+          </ion-tab-button>
+          <ion-tab-button>
+            <ion-label>Iesiri</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-item>
+  </div>
+  <ion-list>
+    <app-message *ngFor="let transaction of getTransactions()" [transaction]="transaction"></app-message>
+  </ion-list>
+
+</ion-content>
