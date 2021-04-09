@@ -1,0 +1,78 @@
+<ion-item *ngIf="cont" [routerLink]="'./' + cont.id" [detail]="false">
+  <div slot="start"></div>
+  <ion-label class="ion-text-wrap">
+    <h2>Cont Bancar</h2>
+    <p>
+      {{ cont.account }}
+    </p>
+  </ion-label>
+  <ion-label class="ion-text-wrap">
+    <h2>
+      <span class="date">
+        MDL{{ cont.sum }}
+      </span>
+    </h2>
+  </ion-label>
+</ion-item>
+<ion-item *ngIf="card">
+  <!--<ion-item *ngIf="card" [routerLink]="'./card/' + card.id" [detail]="false">-->
+  <div slot="start"></div>
+  <ion-label class="ion-text-wrap">
+    <div class="flex-center">
+      <div>
+        <ion-icon class="pr-1" size="large" *ngIf="card.name === 'Visa'" src="assets/icons/visaCC.svg"></ion-icon>
+        <ion-icon class="pr-1" size="large" *ngIf="card.name === 'Mastercard'"
+                  src="assets/icons/mastercardCC.svg"></ion-icon>
+      </div>
+      <div class="w-100">
+        <ion-label class="ion-text-wrap">
+          <h3>{{ card.name }} {{ card.type }}</h3>
+          <p>{{card.standard}} - {{card.account}}</p>
+        </ion-label>
+      </div>
+    </div>
+  </ion-label>
+  <ion-label class="ion-text-wrap">
+    <h2>
+       <span class="date">
+      {{card.currency}}{{ card.sum }}
+      </span>
+    </h2>
+  </ion-label>
+</ion-item>
+<ion-item *ngIf="credit">
+  <!--<ion-item *ngIf="credit" [routerLink]="'./credit/' + credit.id" [detail]="false">-->
+  <div slot="start"></div>
+  <ion-label class="ion-text-wrap">
+    <h3>Cont Credit</h3>
+    <p>
+      {{ credit.account }}
+    </p>
+  </ion-label>
+  <ion-label class="ion-text-wrap">
+    <h2>
+       <span class="date">
+    {{credit.currency}}{{ credit.sum }}
+      </span>
+    </h2>
+  </ion-label>
+</ion-item>
+<ion-item *ngIf="transaction">
+  <div slot="start"></div>
+  <ion-label class="ion-text-wrap">
+    <h3>{{ transaction.name }}</h3>
+    <p>
+      {{ transaction.description }}
+    </p>
+  </ion-label>
+  <ion-label class="ion-text-wrap">
+    <h2>
+      <span class="date">
+        <ion-note>
+          <span class="font-bold" [style.color]="transaction.sign === '-'?'#a70000':'#30a700'">
+          <span>{{transaction.sign === '=' ? '-' : '+'}}</span>{{transaction.currency}}{{ transaction.sum }}</span>
+        </ion-note>
+      </span>
+    </h2>
+  </ion-label>
+</ion-item>

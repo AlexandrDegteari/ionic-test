@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 
-export interface Message {
+export interface Cont {
   account: string;
+  currency: string;
   sum: number;
   id: number;
 }
@@ -10,10 +11,13 @@ export interface Card {
   type: string;
   account: string;
   sum: number;
+  currency: string;
+  standard: string;
   id: number;
 }
 export interface Credit {
   account: string;
+  currency: string;
   sum: number;
   id: number;
 }
@@ -21,7 +25,10 @@ export interface Credit {
 export interface Transaction {
   name: string;
   description: string;
+  currency: string;
+  sign: string;
   sum: number;
+  date: string;
   id: number;
 }
 
@@ -29,15 +36,17 @@ export interface Transaction {
   providedIn: 'root'
 })
 export class DataService {
-  public messages: Message[] = [
+  public conturi: Cont[] = [
     {
       account: 'MD10EC0000000224123155',
-      sum: 0.00,
+      currency: 'MDL',
+      sum: 1000.67,
       id: 0,
     },
     {
       account: 'MD10EC0000000224123156',
-      sum: 0.00,
+      currency: 'MDL',
+      sum: 1000.67,
       id: 1,
     },
   ];
@@ -46,21 +55,26 @@ export class DataService {
       name: 'Visa',
       type: 'Debit',
       account: '2244',
-      sum: 0.00,
+      sum: 19349.67,
+      currency: 'MDL',
+      standard: 'Visa',
       id: 0,
     },
     {
       name: 'Mastercard',
       type: 'Debit',
-      account: '2245',
-      sum: 0.00,
+      account: '2244',
+      sum: 100.67,
+      currency: '$',
+      standard: 'Standard',
       id: 1,
     },
   ];
   public credits: Credit[] = [
     {
       account: 'MD10EC0000000224123155',
-      sum: 123.00,
+      sum: 123.67,
+      currency: 'MDL',
       id: 0,
     }
   ];
@@ -69,20 +83,47 @@ export class DataService {
     {
       name: '(R) SRL M-Crisco',
       description: 'Plata pentru osb onform cont fn din 26.10.20',
+      date: '13 decembrie 2021',
+      currency: 'MDL',
+      sign: '+',
       sum: 1003.67,
-      id: 0,
+      id: 1,
     },
     {
       name: '(R) SC AGRODOR-SUCCES SRL',
       description: 'Executarea ordinului de plata in mod obisnuit prin sistemul ECB-Online',
-      sum: -19345.00,
+      currency: 'MDL',
+      sign: '-',
+      sum: 19345.67,
+      date: '13 decembrie 2021',
       id: 2,
     },
     {
-      name: '(R) SC AGRODOR-SUCCES SRL',
+      name: '(R) SC SUCCES SRL',
       description: 'Executarea ordinului de plata in mod obisnuit prin sistemul ECB-Online <br> Miercuri, 15 Decembrie 2020',
-      sum: -723.00,
+      currency: 'MDL',
+      sign: '+',
+      sum: 2223.67,
+      date: '14 decembrie 2021',
       id: 3,
+    },
+    {
+      name: '(R) SC DOR SRL',
+      description: 'Executarea ordinului de plata in mod obisnuit prin sistemul ECB-Online',
+      currency: 'MDL',
+      sign: '-',
+      sum: 523.67,
+      date: '14 decembrie 2021',
+      id: 4,
+    },
+    {
+      name: '(R) SC AGRO-SERVICE SRL',
+      description: 'Executarea ordinului de plata in mod obisnuit prin sistemul ECB-Online',
+      currency: 'MDL',
+      sign: '-',
+      sum: 2723.67,
+      date: '14 decembrie 2021',
+      id: 5,
     },
   ];
 
@@ -104,11 +145,11 @@ export class DataService {
     return this.cards[id];
   }
 
-  public getMessages(): Message[] {
-    return this.messages;
+  public getConts(): Cont[] {
+    return this.conturi;
   }
 
-  public getMessageById(id: number): Message {
-    return this.messages[id];
+  public getContById(id: number): Cont {
+    return this.conturi[id];
   }
 }

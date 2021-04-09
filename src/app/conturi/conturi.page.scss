@@ -1,0 +1,14 @@
+ion-toolbar {
+  .notification-icon-button {
+    --overflow: visible;
+
+    ion-badge {
+      position: absolute;
+      background: #f70b0b;
+      border-radius: 35%;
+      opacity: 0.9;
+      top: -0.3rem;
+      right: -1rem;
+    }
+  }
+}

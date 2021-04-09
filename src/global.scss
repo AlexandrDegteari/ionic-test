@@ -25,6 +25,80 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-h2{
-  font-size:20px!important;
+@font-face {
+  font-family: 'SFPro';    //This is what we are going to call
+  src: url('./assets/fonts/FontsFree-Net-SFProDisplay-Regular.ttf');
+}
+
+* {
+  font-family: 'SFPro', sans-serif;
+}
+
+p {
+  font-size: 15px !important;
+  margin: 0 !important;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+h3 {
+  font-size: 17px !important;
+  font-weight: bold !important;
+  margin: 0 !important;
+
+}
+
+.flex {
+  display: flex !important;
+}
+
+.flex-center {
+  display: flex !important;
+  align-items: center;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.card {
+  background-color: #f2f6fa;
+  padding: 16px;
+  margin: 16px;
+  border-radius: 20px;
+}
+
+.card2 {
+  background-color: #f7f7f7;
+  padding: 16px;
+}
+
+.bg-grey {
+  background-color: #f7f7f7;
+}
+
+.bg-grey2 {
+  background-color: #f8fafc;
+}
+
+.font-bold {
+  font-weight: bold
+}
+
+.mt-1 {
+  margin-top: 10px !important;
+}
+
+.active {
+  background: #f9f9f9;
+  color: blue!important;
+  border-radius: 10px;
+}
+
+.pr-1 {
+  padding-right: 10px;
 }
