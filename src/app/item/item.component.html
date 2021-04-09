@@ -6,13 +6,11 @@
       {{ cont.account }}
     </p>
   </ion-label>
-  <ion-label class="ion-text-wrap">
-    <h2>
-      <span class="date">
-        MDL{{ cont.sum }}
+  <h3>
+      <span class="date pr-1">
+        {{cont.currency}}{{ cont.sum }}
       </span>
-    </h2>
-  </ion-label>
+  </h3>
 </ion-item>
 <ion-item *ngIf="card">
   <!--<ion-item *ngIf="card" [routerLink]="'./card/' + card.id" [detail]="false">-->
@@ -32,13 +30,11 @@
       </div>
     </div>
   </ion-label>
-  <ion-label class="ion-text-wrap">
-    <h2>
-       <span class="date">
-      {{card.currency}}{{ card.sum }}
+    <h3>
+      <span class="date pr-1">
+       {{card.currency}}{{ card.sum }}
       </span>
-    </h2>
-  </ion-label>
+    </h3>
 </ion-item>
 <ion-item *ngIf="credit">
   <!--<ion-item *ngIf="credit" [routerLink]="'./credit/' + credit.id" [detail]="false">-->
@@ -49,13 +45,11 @@
       {{ credit.account }}
     </p>
   </ion-label>
-  <ion-label class="ion-text-wrap">
-    <h2>
-       <span class="date">
-    {{credit.currency}}{{ credit.sum }}
+  <h3>
+      <span class="date pr-1">
+          {{credit.currency}}{{ credit.sum }}
       </span>
-    </h2>
-  </ion-label>
+  </h3>
 </ion-item>
 <ion-item *ngIf="transaction">
   <div slot="start"></div>
@@ -65,7 +59,6 @@
       {{ transaction.description }}
     </p>
   </ion-label>
-  <ion-label class="ion-text-wrap">
     <h2>
       <span class="date">
         <ion-note>
@@ -74,5 +67,4 @@
         </ion-note>
       </span>
     </h2>
-  </ion-label>
 </ion-item>

@@ -4,13 +4,14 @@
       <ion-avatar slot="start">
         <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" alt="">
       </ion-avatar>
-      <ion-label><p style="font-size:12px">DIRECTOR M-CRISCO SRL</p><h3>Marti Valencia</h3></ion-label>
+      <ion-label><p style="font-size:12px">DIRECTOR M-CRISCO SRL</p>
+        <h3>Marti Valencia</h3></ion-label>
       <ion-button class="notification-icon-button" size="medium" color="secondary">
         <ion-icon src="assets/icons/BellIcon.svg">
         </ion-icon>
         <ion-badge color="danger">99+</ion-badge>
       </ion-button>
-      <ion-button  class="notification-icon-button" size="medium" color="secondary">
+      <ion-button class="notification-icon-button" size="medium" color="secondary">
         <ion-icon color="primary" name="ellipsis-horizontal-outline"></ion-icon>
       </ion-button>
     </ion-item>
@@ -55,16 +56,14 @@
   </ion-list>
   <div class="card2">
     <h2>Informatie utila</h2>
-    <ion-list>
-      <ion-item style="--background-color: #000">
-        <ion-label color="primary">Informatii despre banca</ion-label>
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-      </ion-item>
-      <ion-item>
-        <ion-label color="primary">Servicii clienti</ion-label>
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-      </ion-item>
-    </ion-list>
+    <div class="flex-between">
+      <h3 class="info">Informatii despre banca</h3>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+    <div class="flex-between">
+      <h3 class="info">Servicii clienti</h3>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
     <span style="font-size:12px;">&copy; ECB - EuroCreditBank, 2020</span>
   </div>
 </ion-content>

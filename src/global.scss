@@ -61,6 +61,12 @@ h3 {
   align-items: center;
 }
 
+.flex-between{
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .w-100 {
   width: 100% !important;
 }
@@ -101,4 +107,10 @@ h3 {
 
 .pr-1 {
   padding-right: 10px;
+}
+.info{
+  margin: 16px 190px 16px 16px;
+  padding: 10px 0;
+  font-size: 17px;
+  color: #0071e6;
 }
