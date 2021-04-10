@@ -37,6 +37,7 @@
 p {
   font-size: 15px !important;
   margin: 0 !important;
+  color: #888888!important;
 }
 
 h2 {
@@ -61,7 +62,12 @@ h3 {
   align-items: center;
 }
 
-.flex-between{
+.flex-column {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.flex-between {
   display: flex !important;
   justify-content: space-between;
   align-items: center;
@@ -99,18 +105,56 @@ h3 {
   margin-top: 10px !important;
 }
 
+.mr-1 {
+  margin-right: 10px;
+}
+
+.my-1{
+  margin: 10px 0;
+}
+
+.pa-12 {
+  padding: 12px
+}
+
+.py-1{
+  padding: 10px 0
+}
+
 .active {
   background: #f9f9f9;
-  color: blue!important;
-  border-radius: 10px;
+  color: blue !important;
 }
 
 .pr-1 {
   padding-right: 10px;
 }
-.info{
-  margin: 16px 190px 16px 16px;
+
+.pl-1 {
+  padding-left: 10px;
+}
+
+.pl-16 {
+  padding-left: 16px;
+}
+
+.px-16 {
+  padding: 0 16px;
+}
+
+.info {
   padding: 10px 0;
-  font-size: 17px;
+  font-size: 17px !important;
   color: #0071e6;
+  font-weight: normal !important;
+}
+
+.btn{
+  background: #fff!important;
+  color: #000!important;
+}
+
+.btn:focus, .btn:active, .btn:hover{
+  background: #f9f9f9;
+  color: #000
 }

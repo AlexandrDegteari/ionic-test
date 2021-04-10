@@ -1,27 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <div>
-            <ion-buttons>
-              <ion-back-button [text]="''" defaultHref="/"></ion-back-button>
-            </ion-buttons>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div>
-            <h3>Cont bancar</h3>
-            <p>{{cont.account}}</p>
-          </div>
-        </ion-col>
-        <ion-col>
-          <ion-button size="medium" color="secondary">
-            <ion-icon src="assets/icons/info-icon.svg"></ion-icon>
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <div class="flex-between">
+      <div class="flex-center">
+        <ion-back-button class="mr-1" [text]="''" defaultHref="/"></ion-back-button>
+        <div>
+          <h3>Cont bancar</h3>
+          <p>{{cont.account}}</p>
+        </div>
+      </div>
+      <ion-button size="medium" color="secondary">
+        <ion-icon src="assets/icons/info-icon.svg"></ion-icon>
+      </ion-button>
+    </div>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true" *ngIf="cont">
@@ -35,30 +25,40 @@
       <h2 class="font-bold" style="font-size:32px">MDL13,210.00</h2>
     </div>
   </div>
-  <div class="ion-padding">
-    <h2 class="font-bold">Tranzactii</h2>
-    <ion-item>
-      <ion-tabs>
-        <ion-tab-bar>
-          <ion-tab-button [ngClass]="state==='all'?'active':''" (click)="changeTab('all')">
-            <ion-label><p [ngClass]="state==='all'?'active':''">Toate</p></ion-label>
-          </ion-tab-button>
-          <ion-tab-button [ngClass]="state==='plus'?'active':''" (click)="changeTab('plus')">
-            <ion-label><p [ngClass]="state==='plus'?'active':''">Intrari</p></ion-label>
-          </ion-tab-button>
-          <ion-tab-button [ngClass]="state==='minus'?'active':''" (click)="changeTab('minus')">
-            <ion-label><p [ngClass]="state==='minus'?'active':''">Iesiri</p></ion-label>
-          </ion-tab-button>
-        </ion-tab-bar>
-      </ion-tabs>
-    </ion-item>
-  </div>
+  <h2 class="font-bold pl-16">Tranzactii</h2>
+  <ion-item class="my-1" lines="none">
+    <ion-tab-button [ngClass]="state==='all'?'active':''" (click)="changeTab('all')">
+      <ion-label><p [ngClass]="state==='all'?'active':''">Toate</p></ion-label>
+    </ion-tab-button>
+    <ion-tab-button [ngClass]="state==='plus'?'active':''" (click)="changeTab('plus')">
+      <ion-label><p [ngClass]="state==='plus'?'active':''">Intrari</p></ion-label>
+    </ion-tab-button>
+    <ion-tab-button [ngClass]="state==='minus'?'active':''" (click)="changeTab('minus')">
+      <ion-label><p [ngClass]="state==='minus'?'active':''">Iesiri</p></ion-label>
+    </ion-tab-button>
+  </ion-item>
   <ion-list>
+<!--    <div>-->
+<!--      <ion-item *ngFor="let transaction of getTransactions()" class="px-16 w-100">-->
+<!--        <div *ngIf="transaction" class="flex-column w-100 py-1">-->
+<!--          joijoijoijio-->
+<!--          <div class="bg-grey2 ion-padding">{{transaction.date}}</div>-->
+<!--          <div class="flex-between w-100">-->
+<!--            <h3>{{ transaction.name }}</h3>-->
+<!--            <span class="font-bold" [style.color]="transaction.sign === '-'?'#a70000':'#30a700'">-->
+<!--          <span>{{transaction.sign === '-' ? '-' : '+'}}</span>{{transaction.currency}}{{ transaction.sum }}</span>-->
+<!--          </div>-->
+<!--          <p style="white-space: normal" class="w-100">{{ transaction.description }}</p>-->
+<!--        </div>-->
+<!--      </ion-item>-->
+<!--    </div>-->
     <div class="bg-grey2 ion-padding">Astazi</div>
-    <app-message *ngFor="let transaction of getTransactionsbyDate('13 decembrie 2021')" [transaction]="transaction"></app-message>
+    <app-message *ngFor="let transaction of getTransactionsbyDate('2020-12-13')"
+                 [transaction]="transaction"></app-message>
   </ion-list>
   <ion-list>
     <div class="bg-grey2 ion-padding">14 december 2020</div>
-    <app-message *ngFor="let transaction of getTransactionsbyDate('14 decembrie 2021')" [transaction]="transaction"></app-message>
+    <app-message *ngFor="let transaction of getTransactionsbyDate('2020-12-14')"
+                 [transaction]="transaction"></app-message>
   </ion-list>
 </ion-content>

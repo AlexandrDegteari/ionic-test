@@ -1,7 +1,6 @@
-<ion-item *ngIf="cont" [routerLink]="'./' + cont.id" [detail]="false">
-  <div slot="start"></div>
-  <ion-label class="ion-text-wrap">
-    <h2>Cont Bancar</h2>
+<ion-item class="px-16" *ngIf="cont" [routerLink]="'./' + cont.id" [detail]="false">
+  <ion-label class="ion-text-wrap ">
+    <h2>Cont bancar</h2>
     <p>
       {{ cont.account }}
     </p>
@@ -12,14 +11,14 @@
       </span>
   </h3>
 </ion-item>
-<ion-item *ngIf="card">
+<ion-item class="px-16" *ngIf="card">
   <!--<ion-item *ngIf="card" [routerLink]="'./card/' + card.id" [detail]="false">-->
-  <div slot="start"></div>
   <ion-label class="ion-text-wrap">
     <div class="flex-center">
       <div>
-        <ion-icon class="pr-1" size="large" *ngIf="card.name === 'Visa'" src="assets/icons/visaCC.svg"></ion-icon>
-        <ion-icon class="pr-1" size="large" *ngIf="card.name === 'Mastercard'"
+        <ion-icon style="width: 50px" class="mr-1" size="large" *ngIf="card.name === 'Visa'"
+                  src="assets/icons/visaCC.svg"></ion-icon>
+        <ion-icon style="width: 50px" class="mr-1" size="large" *ngIf="card.name === 'Mastercard'"
                   src="assets/icons/mastercardCC.svg"></ion-icon>
       </div>
       <div class="w-100">
@@ -30,15 +29,14 @@
       </div>
     </div>
   </ion-label>
-    <h3>
+  <h3>
       <span class="date pr-1">
        {{card.currency}}{{ card.sum }}
       </span>
-    </h3>
+  </h3>
 </ion-item>
-<ion-item *ngIf="credit">
+<ion-item class="px-16" *ngIf="credit">
   <!--<ion-item *ngIf="credit" [routerLink]="'./credit/' + credit.id" [detail]="false">-->
-  <div slot="start"></div>
   <ion-label class="ion-text-wrap">
     <h3>Cont Credit</h3>
     <p>
@@ -51,20 +49,13 @@
       </span>
   </h3>
 </ion-item>
-<ion-item *ngIf="transaction">
-  <div slot="start"></div>
-  <ion-label class="ion-text-wrap">
-    <h3>{{ transaction.name }}</h3>
-    <p>
-      {{ transaction.description }}
-    </p>
-  </ion-label>
-    <h2>
-      <span class="date">
-        <ion-note>
-          <span class="font-bold" [style.color]="transaction.sign === '-'?'#a70000':'#30a700'">
-          <span>{{transaction.sign === '=' ? '-' : '+'}}</span>{{transaction.currency}}{{ transaction.sum }}</span>
-        </ion-note>
-      </span>
-    </h2>
+<ion-item class="px-16 w-100" *ngIf="transaction">
+  <div class="flex-column w-100 py-1">
+    <div class="flex-between w-100">
+      <h3>{{ transaction.name }}</h3>
+      <span class="font-bold" [style.color]="transaction.sign === '-'?'#a70000':'#30a700'">
+          <span>{{transaction.sign === '-' ? '-' : '+'}}</span>{{transaction.currency}}{{ transaction.sum }}</span>
+    </div>
+    <p style="white-space: normal" class="w-100">{{ transaction.description }}</p>
+  </div>
 </ion-item>

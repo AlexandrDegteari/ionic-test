@@ -83,10 +83,10 @@ export class DataService {
     {
       name: '(R) SRL M-Crisco',
       description: 'Plata pentru osb onform cont fn din 26.10.20',
-      date: '13 decembrie 2021',
       currency: 'MDL',
       sign: '+',
       sum: 1003.67,
+      date: '2020-12-13',
       id: 1,
     },
     {
@@ -94,17 +94,17 @@ export class DataService {
       description: 'Executarea ordinului de plata in mod obisnuit prin sistemul ECB-Online',
       currency: 'MDL',
       sign: '-',
-      sum: 19345.67,
-      date: '13 decembrie 2021',
+      sum: 1345.67,
+      date: '2020-12-13',
       id: 2,
     },
     {
       name: '(R) SC SUCCES SRL',
-      description: 'Executarea ordinului de plata in mod obisnuit prin sistemul ECB-Online <br> Miercuri, 15 Decembrie 2020',
+      description: 'Executarea ordinului de plata in mod obisnuit prin sistemul ECB-Online',
       currency: 'MDL',
       sign: '+',
       sum: 2223.67,
-      date: '14 decembrie 2021',
+      date: '2020-12-14',
       id: 3,
     },
     {
@@ -113,7 +113,7 @@ export class DataService {
       currency: 'MDL',
       sign: '-',
       sum: 523.67,
-      date: '14 decembrie 2021',
+      date: '2020-12-14',
       id: 4,
     },
     {
@@ -122,7 +122,7 @@ export class DataService {
       currency: 'MDL',
       sign: '-',
       sum: 2723.67,
-      date: '14 decembrie 2021',
+      date: '2020-12-14',
       id: 5,
     },
   ];

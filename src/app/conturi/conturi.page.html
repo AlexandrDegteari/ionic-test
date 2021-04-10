@@ -1,10 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" alt="">
+    <ion-item lines="none">
+      <ion-avatar class="mr-1">
+        <img src="./assets/icons/ava.png" alt="">
       </ion-avatar>
-      <ion-label><p style="font-size:12px">DIRECTOR M-CRISCO SRL</p>
+      <ion-label><p style="font-size:12px!important;">DIRECTOR -(R) M-CRISCO SRL</p>
         <h3>Marti Valencia</h3></ion-label>
       <ion-button class="notification-icon-button" size="medium" color="secondary">
         <ion-icon src="assets/icons/BellIcon.svg">
@@ -23,7 +23,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-header collapse="condense">
+  <ion-header class="ion-no-border" collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
         <h2>Conturi</h2>
@@ -34,7 +34,7 @@
   <ion-list>
     <app-message *ngFor="let cont of getConts()" [cont]="cont"></app-message>
   </ion-list>
-  <ion-header collapse="condense">
+  <ion-header class="ion-no-border" collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
         <h2>Carduri</h2>
@@ -44,7 +44,7 @@
   <ion-list>
     <app-message *ngFor="let card of getCards()" [card]="card"></app-message>
   </ion-list>
-  <ion-header collapse="condense">
+  <ion-header class="ion-no-border" collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
         <h2>Credite</h2>
