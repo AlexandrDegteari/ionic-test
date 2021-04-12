@@ -50,15 +50,26 @@ export class ViewItemPage implements OnInit {
 //     return result;
 //     // }
 //   }
-  getTransactionsbyDate(date): Transaction[] {
-    const filteredTransaction = this.data.getTransactions().filter(transaction => transaction.date === date);
+  getTransactions(): Transaction[] {
+    const filteredTransaction = this.data.getTransactions();
     if (this.state === 'minus'){
-      return filteredTransaction.filter(transaction => transaction.sign === '-');
+      console.log('-');
+      return filteredTransaction.filter(transaction => console.log(Object.values(transaction)[1].filter(trans => trans.sign === '-')));
     } else if (this.state === 'plus'){
-      return filteredTransaction.filter(transaction => transaction.sign === '+');
+      return filteredTransaction.filter(transaction => Object.values(transaction)[1].filter(trans => trans.sign === '+'));
     } else {
       return filteredTransaction;
     }
   }
+  // getTransactionsbyDate(date): Transaction[] {
+  //   const filteredTransaction = this.data.getTransactions().filter(transaction => transaction.date === date);
+  //   if (this.state === 'minus'){
+  //     return filteredTransaction.filter(transaction => transaction.sign === '-');
+  //   } else if (this.state === 'plus'){
+  //     return filteredTransaction.filter(transaction => transaction.sign === '+');
+  //   } else {
+  //     return filteredTransaction;
+  //   }
+  // }
 }
 

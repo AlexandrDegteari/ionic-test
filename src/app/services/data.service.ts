@@ -23,13 +23,8 @@ export interface Credit {
 }
 
 export interface Transaction {
-  name: string;
-  description: string;
-  currency: string;
-  sign: string;
-  sum: number;
   date: string;
-  id: number;
+  items: Array<object>;
 }
 
 @Injectable({
@@ -81,50 +76,60 @@ export class DataService {
 
   public transactions: Transaction[] = [
     {
-      name: '(R) SRL M-Crisco',
-      description: 'Plata pentru osb onform cont fn din 26.10.20',
-      currency: 'MDL',
-      sign: '+',
-      sum: 1003.67,
       date: '2020-12-13',
-      id: 1,
+      items: [
+        {
+          name: '(R) SRL M-Crisco',
+          description: 'Plata pentru osb onform cont fn din 26.10.20',
+          currency: 'MDL',
+          sign: '+',
+          sum: 1003.67,
+          date: '2020-12-13',
+          id: 1,
+        },
+        {
+          name: '(R) SC AGRODOR-SUCCES SRL',
+          description: 'Executarea ordinului de plata in mod obisnuit prin sistemul ECB-Online',
+          currency: 'MDL',
+          sign: '-',
+          sum: 1345.67,
+          date: '2020-12-13',
+          id: 2,
+        },
+      ]
     },
     {
-      name: '(R) SC AGRODOR-SUCCES SRL',
-      description: 'Executarea ordinului de plata in mod obisnuit prin sistemul ECB-Online',
-      currency: 'MDL',
-      sign: '-',
-      sum: 1345.67,
-      date: '2020-12-13',
-      id: 2,
-    },
-    {
-      name: '(R) SC SUCCES SRL',
-      description: 'Executarea ordinului de plata in mod obisnuit prin sistemul ECB-Online',
-      currency: 'MDL',
-      sign: '+',
-      sum: 2223.67,
       date: '2020-12-14',
-      id: 3,
-    },
-    {
-      name: '(R) SC DOR SRL',
-      description: 'Executarea ordinului de plata in mod obisnuit prin sistemul ECB-Online',
-      currency: 'MDL',
-      sign: '-',
-      sum: 523.67,
-      date: '2020-12-14',
-      id: 4,
-    },
-    {
-      name: '(R) SC AGRO-SERVICE SRL',
-      description: 'Executarea ordinului de plata in mod obisnuit prin sistemul ECB-Online',
-      currency: 'MDL',
-      sign: '-',
-      sum: 2723.67,
-      date: '2020-12-14',
-      id: 5,
-    },
+      items: [
+        {
+          name: '(R) SC SUCCES SRL',
+          description: 'Executarea ordinului de plata in mod obisnuit prin sistemul ECB-Online',
+          currency: 'MDL',
+          sign: '+',
+          sum: 2223.67,
+          date: '2020-12-14',
+          id: 3,
+        },
+        {
+          name: '(R) SC DOR SRL',
+          description: 'Executarea ordinului de plata in mod obisnuit prin sistemul ECB-Online',
+          currency: 'MDL',
+          sign: '-',
+          sum: 523.67,
+          date: '2020-12-14',
+          id: 4,
+        },
+        {
+          name: '(R) SC AGRO-SERVICE SRL',
+          description: 'Executarea ordinului de plata in mod obisnuit prin sistemul ECB-Online',
+          currency: 'MDL',
+          sign: '-',
+          sum: 2723.67,
+          date: '2020-12-14',
+          id: 5,
+        }
+      ]
+    }
   ];
 
   constructor() { }

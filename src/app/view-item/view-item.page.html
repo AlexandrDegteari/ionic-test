@@ -38,27 +38,28 @@
     </ion-tab-button>
   </ion-item>
   <ion-list>
-<!--    <div>-->
-<!--      <ion-item *ngFor="let transaction of getTransactions()" class="px-16 w-100">-->
-<!--        <div *ngIf="transaction" class="flex-column w-100 py-1">-->
-<!--          joijoijoijio-->
-<!--          <div class="bg-grey2 ion-padding">{{transaction.date}}</div>-->
-<!--          <div class="flex-between w-100">-->
-<!--            <h3>{{ transaction.name }}</h3>-->
-<!--            <span class="font-bold" [style.color]="transaction.sign === '-'?'#a70000':'#30a700'">-->
-<!--          <span>{{transaction.sign === '-' ? '-' : '+'}}</span>{{transaction.currency}}{{ transaction.sum }}</span>-->
-<!--          </div>-->
-<!--          <p style="white-space: normal" class="w-100">{{ transaction.description }}</p>-->
-<!--        </div>-->
-<!--      </ion-item>-->
-<!--    </div>-->
-    <div class="bg-grey2 ion-padding">Astazi</div>
-    <app-message *ngFor="let transaction of getTransactionsbyDate('2020-12-13')"
-                 [transaction]="transaction"></app-message>
+        <div *ngFor="let transaction of getTransactions()">
+          <div class="bg-grey2 ion-padding">{{transaction.date}}</div>
+          <ion-item *ngFor="let trans of transaction.items"  class="w-100">
+            <div *ngIf="trans" class="flex-column w-100 py-1">
+              <div class="flex-between w-100">
+                <h3>{{ trans.name }}</h3>
+                <span class="font-bold" [style.color]="trans.sign === '-'?'#a70000':'#30a700'">
+              <span>{{trans.sign === '-' ? '-' : '+'}}</span>{{trans.currency}}{{ trans.sum }}</span>
+              </div>
+              <p style="white-space: normal" class="w-100">{{ trans.description }}</p>
+            </div>
+          </ion-item>
+        </div>
   </ion-list>
-  <ion-list>
-    <div class="bg-grey2 ion-padding">14 december 2020</div>
-    <app-message *ngFor="let transaction of getTransactionsbyDate('2020-12-14')"
-                 [transaction]="transaction"></app-message>
-  </ion-list>
+<!--  <ion-list>-->
+<!--    <div class="bg-grey2 ion-padding">Astazi</div>-->
+<!--    <app-message *ngFor="let transaction of getTransactionsbyDate('2020-12-13')"-->
+<!--                 [transaction]="transaction"></app-message>-->
+<!--  </ion-list>-->
+<!--  <ion-list>-->
+<!--    <div class="bg-grey2 ion-padding">14 december 2020</div>-->
+<!--    <app-message *ngFor="let transaction of getTransactionsbyDate('2020-12-14')"-->
+<!--                 [transaction]="transaction"></app-message>-->
+<!--  </ion-list>-->
 </ion-content>
